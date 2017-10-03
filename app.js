@@ -23,14 +23,23 @@ var server = http.createServer(function (request, response){
       });
     }
 
-    //car URl
-    // else if (request.url === "/cars") {
-    //   fs.readFile('./views/cars.html', 'utf8', function (errors, contents){
-    //       response.writeHead(200, {'Content-Type': 'text/html'});  // send data about response
-    //       response.write(contents);  //  send response body
-    //       response.end(); // finished!
-    //   });
-    // }
+    // car URl
+    else if (request.url === "/cars") {
+      fs.readFile('./views/cars.html', 'utf8', function (errors, contents){
+          response.writeHead(200, {'Content-Type': 'text/html'});  // send data about response
+          response.write(contents);  //  send response body
+          response.end(); // finished!
+      });
+    }
+
+    // CAT URl
+    else if (request.url === "/cats") {
+      fs.readFile('./views/cats.html', 'utf8', function (errors, contents){
+          response.writeHead(200, {'Content-Type': 'text/html'});  // send data about response
+          response.write(contents);  //  send response body
+          response.end(); // finished!
+      });
+    }
 
 
     //images URL request a cool picture
@@ -42,9 +51,34 @@ var server = http.createServer(function (request, response){
       });
     }
 
+    //images URL request a cool picture
+    else if (request.url === '/images/red_tesla.jpg') {
+      fs.readFile('./images/red_tesla.jpg',  function (errors, contents){
+          response.writeHead(200, {'Content-Type': 'image/jpg'});  // send data about response
+          response.write(contents);  //  send response body
+          response.end(); // finished!
+      });
+    }
+
     //images URL request to display a cat picture
     else if (request.url === '/images/cat3.jpg') {
       fs.readFile('./images/cat3.jpg',  function (errors, contents){
+          response.writeHead(200, {'Content-Type': 'image/jpg'});  // send data about response
+          response.write(contents);  //  send response body
+          response.end(); // finished!
+      });
+    }
+    //images URL request to display a cat picture
+    else if (request.url === '/images/cat2.jpg') {
+      fs.readFile('./images/cat2.jpg',  function (errors, contents){
+          response.writeHead(200, {'Content-Type': 'image/jpg'});  // send data about response
+          response.write(contents);  //  send response body
+          response.end(); // finished!
+      });
+    }
+    //images URL request to display a cat picture
+    else if (request.url === '/images/cat4.jpg') {
+      fs.readFile('./images/cat4.jpg',  function (errors, contents){
           response.writeHead(200, {'Content-Type': 'image/jpg'});  // send data about response
           response.write(contents);  //  send response body
           response.end(); // finished!
